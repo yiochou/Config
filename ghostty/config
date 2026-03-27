@@ -21,8 +21,8 @@ cursor-style-blink = false
 keybind = shift+enter=text:\x1b\r
 
 # Ghostty 原生分割（tmux 外使用時）
-keybind = cmd+d=new_split:right
-keybind = cmd+shift+d=new_split:down
+keybind = cmd+'=new_split:right
+keybind = cmd+shift+'=new_split:down
 keybind = opt+h=goto_split:left
 keybind = opt+j=goto_split:bottom
 keybind = opt+k=goto_split:top
