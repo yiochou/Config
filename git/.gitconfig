@@ -1,3 +1,7 @@
+[user]
+	name = yiochou
+	email = yiochou@users.noreply.github.com
+
 [alias]
 	co = checkout
 	br = branch
