@@ -1,0 +1,30 @@
+font-family = JetBrains Mono
+font-size = 14
+font-thicken = true
+
+# macOS Option 鍵當 Alt（Claude Code 快捷鍵必要）
+macos-option-as-alt = true
+
+# 剪貼簿（Claude Code Ctrl+V 貼圖需要）
+clipboard-read = allow
+clipboard-write = allow
+clipboard-trim-trailing-spaces = true
+
+# 視窗
+window-padding-x = 8
+window-padding-y = 4
+window-padding-balance = true
+cursor-style = bar
+cursor-style-blink = false
+
+# tmux 內 Shift+Enter 修復
+keybind = shift+enter=text:\x1b\r
+
+# Ghostty 原生分割（tmux 外使用時）
+keybind = cmd+d=new_split:right
+keybind = cmd+shift+d=new_split:down
+keybind = opt+h=goto_split:left
+keybind = opt+j=goto_split:bottom
+keybind = opt+k=goto_split:top
+keybind = opt+l=goto_split:right
+keybind = cmd+shift+=equalize_splits

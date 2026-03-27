@@ -1,0 +1,67 @@
+# tmux + Claude Code 操作手冊
+╔═══════════════════════════════════════════════════════════════╗
+║  Prefix = Ctrl+A （先按 Ctrl+A 放開，再按下一個鍵）          ║
+╚═══════════════════════════════════════════════════════════════╝
+
+── 進出 tmux ──────────────────────────────────────────────────
+
+  t                  接回 session，沒有就建新的（alias）
+  tmux new -s 名字   建立有名字的 session
+  tmux attach -t 名字 接回指定 session
+  tls                列出所有 session（alias）
+  tks -t 名字        砍掉指定 session（alias）
+
+── 日常 5 招（夠用了）─────────────────────────────────────────
+
+  Ctrl+A  d          離開（session 繼續活著）
+  Ctrl+A  |          左右分割
+  Ctrl+A  -          上下分割
+  Ctrl+A  h/j/k/l    切換 pane（vim 方向）
+  Ctrl+A  z          放大/縮小當前 pane
+
+── Window（分頁）──────────────────────────────────────────────
+
+  Ctrl+A  c          新 window
+  Ctrl+A  1/2/3      切到 window 1/2/3
+  Ctrl+A  ,          重新命名 window
+  Ctrl+A  X          關掉整個 window（大寫 X）
+
+── Pane 操作 ──────────────────────────────────────────────────
+
+  Ctrl+A  x          關掉當前 pane
+  Ctrl+A  H/J/K/L    調整 pane 大小（大寫，可連按）
+
+── 其他 ───────────────────────────────────────────────────────
+
+  Ctrl+A  r          重載 tmux 設定
+  Ctrl+A  Shift+I    安裝 plugins（第一次用要按）
+  Ctrl+A  [          進入捲動模式（q 離開）
+
+── 工作流範例 ─────────────────────────────────────────────────
+
+  早上開工:
+    tmux new -s myapp       # 建 session
+    claude                  # 開 Claude Code
+    Ctrl+A |                # 分割，右邊開 server
+    Ctrl+A h                # 跳回左邊 Claude
+
+  暫時離開:
+    Ctrl+A d                # detach
+
+  回來接手:
+    t                       # 或 tmux attach -t myapp
+
+── Alias ──────────────────────────────────────────────────────
+
+  t      = tmux attach || tmux new-session
+  tls    = tmux ls
+  tks    = tmux kill-session
+
+── Claude Code 在 tmux 內的快捷 ──────────────────────────────
+
+  Shift+Enter     多行輸入
+  Alt+P           切換模型
+  Alt+T           切換思考模式
+  Alt+B / Alt+F   游標字詞移動
+  Ctrl+C          中斷 Claude 回應
+  /resume         接回之前的對話
