@@ -39,4 +39,24 @@ if [ ! -d ~/.tmux/plugins/tpm ]; then
     echo "TPM installed. Run 'Ctrl+A Shift+I' inside tmux to install plugins."
 fi
 
+# === apps checklist ===
+echo ""
+echo "── Apps to install manually ──"
+APPS=(
+    "Ghostty:https://ghostty.org"
+    "Raycast:https://raycast.com"
+    "TablePlus:https://tableplus.com"
+    "OrbStack:https://orbstack.dev"
+)
+for entry in "${APPS[@]}"; do
+    name="${entry%%:*}"
+    url="${entry#*:}"
+    if [ -d "/Applications/${name}.app" ]; then
+        echo "  ✓ $name"
+    else
+        echo "  ✗ $name → $url"
+    fi
+done
+
+echo ""
 echo "Done!"
