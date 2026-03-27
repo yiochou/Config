@@ -1,31 +1,42 @@
 #!/bin/bash
+set -e
 
-# === tmux ==============================
-ln -s -f $PWD/.tmux.conf ~/.tmux.conf
+CONFIG_DIR="$(cd "$(dirname "$0")" && pwd)"
 
-# === bash_prompt =======================
-echo "source $PWD/.bash_prompt" >> ~/.bash_prompt;
+echo "Installing from $CONFIG_DIR..."
 
-# === bashrc ============================
-echo "source $PWD/.bashrc" >> ~/.bashrc;
+# === bash ===
+ln -sf "$CONFIG_DIR/bash/.bashrc" ~/.bashrc
+ln -sf "$CONFIG_DIR/bash/.bash_profile" ~/.bash_profile
+ln -sf "$CONFIG_DIR/bash/.bash_prompt" ~/.bash_prompt
 
-# === gitconfig =========================
-echo "[include] \n\t path = $PWD/.gitconfig" >> ~/.gitconfig;
+# === git ===
+ln -sf "$CONFIG_DIR/git/.gitconfig" ~/.gitconfig
 
-# === ghostty ===========================
+# === tmux ===
+ln -sf "$CONFIG_DIR/tmux/.tmux.conf" ~/.tmux.conf
+
+# === ghostty ===
 mkdir -p ~/.config/ghostty
-ln -s -f $PWD/ghostty/config ~/.config/ghostty/config
+ln -sf "$CONFIG_DIR/ghostty/config" ~/.config/ghostty/config
 
-# === help system (Yio Command Center) ==
+# === claude ===
+mkdir -p ~/.claude
+ln -sf "$CONFIG_DIR/claude/settings.json" ~/.claude/settings.json
+ln -sf "$CONFIG_DIR/claude/CLAUDE.md" ~/.claude/CLAUDE.md
+
+# === help system (Yio Command Center) ===
 mkdir -p ~/.local/bin ~/.local/share/help
-ln -s -f $PWD/h ~/.local/bin/h
+ln -sf "$CONFIG_DIR/h" ~/.local/bin/h
 chmod +x ~/.local/bin/h
-for f in $PWD/help/*; do
-    ln -s -f "$f" ~/.local/share/help/$(basename "$f")
+for f in "$CONFIG_DIR"/help/*; do
+    ln -sf "$f" ~/.local/share/help/"$(basename "$f")"
 done
 
-# === tmux plugins ======================
+# === tmux plugins ===
 if [ ! -d ~/.tmux/plugins/tpm ]; then
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
     echo "TPM installed. Run 'Ctrl+A Shift+I' inside tmux to install plugins."
 fi
+
+echo "Done!"
