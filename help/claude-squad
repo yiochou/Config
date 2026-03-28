@@ -1,0 +1,34 @@
+# Claude Squad（多 Agent 終端管理）
+
+── 啟動 ───────────────────────────────────────────────────────
+
+  claude-squad    啟動 TUI（需在 git repo 內）
+  cs              alias（需自行建立 symlink）
+  -y              experimental auto-accept 模式
+
+── Session 管理 ───────────────────────────────────────────────
+
+  n              新建 session
+  N              新建 session（帶 prompt）
+  D              刪除 session
+  ↑/k  ↓/j      切換 session
+
+── 互動 ───────────────────────────────────────────────────────
+
+  Enter / o      進入 session 互動
+  Ctrl-q         退出 session 回 TUI
+  Tab            切換 preview / diff 檢視
+  Shift+↑/↓     在 diff 裡捲動
+
+── 完成 ───────────────────────────────────────────────────────
+
+  s              commit + push 到 GitHub
+  c              commit + 暫停 session
+  r              恢復暫停的 session
+  q              離開 Claude Squad
+
+── 注意事項 ───────────────────────────────────────────────────
+
+  • 需要 tmux 和 gh 已安裝
+  • 多 session 共用同一個訂閱 rate limit
+  • 每個 session 自動建獨立 git worktree + branch
