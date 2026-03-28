@@ -21,6 +21,9 @@ alias timestamp="date +%s"
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias localip="ipconfig getifaddr en0"
 
+# Tab naming
+tab() { echo -ne "\033]0;${1:-}\007"; }
+
 # tmux
 alias t="tmux attach || tmux new-session"
 alias tks="tmux kill-session"
