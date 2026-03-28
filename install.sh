@@ -13,9 +13,6 @@ ln -sf "$CONFIG_DIR/bash/.bash_prompt" ~/.bash_prompt
 # === git ===
 ln -sf "$CONFIG_DIR/git/.gitconfig" ~/.gitconfig
 
-# === tmux ===
-ln -sf "$CONFIG_DIR/tmux/.tmux.conf" ~/.tmux.conf
-
 # === ghostty ===
 mkdir -p ~/.config/ghostty
 ln -sf "$CONFIG_DIR/ghostty/config" ~/.config/ghostty/config
@@ -32,12 +29,6 @@ chmod +x ~/.local/bin/h
 for f in "$CONFIG_DIR"/help/*; do
     ln -sf "$f" ~/.local/share/help/"$(basename "$f")"
 done
-
-# === tmux plugins ===
-if [ ! -d ~/.tmux/plugins/tpm ]; then
-    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-    echo "TPM installed. Run 'Ctrl+A Shift+I' inside tmux to install plugins."
-fi
 
 # === apps checklist ===
 echo ""

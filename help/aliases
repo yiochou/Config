@@ -19,9 +19,3 @@
 
   ip             外部 IP
   localip        本地 IP
-
-── tmux ───────────────────────────────────────────────────────
-
-  t              接回/建立 tmux session
-  tls            列出所有 session
-  tks            砍 session
