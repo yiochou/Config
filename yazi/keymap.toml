@@ -1,7 +1,11 @@
 [mgr]
 prepend_keymap = [
+  # smart enter: dir → enter, file → open
+  { on = "<Enter>", run = "plugin smart-enter", desc = "Enter or open" },
   # lazygit
   { on = "<C-g>", run = "shell --block -- lazygit", desc = "Open lazygit" },
+  # toggle pane: maximize preview
+  { on = "<C-p>", run = "plugin toggle-pane", desc = "Toggle maximize preview" },
   # fzf file search
   { on = "<C-f>", run = "shell 'fd --type f --hidden --exclude .git | fzf --preview \"head -50 {}\" | xargs -r yazi' --block --confirm", desc = "fzf file search" },
 ]
