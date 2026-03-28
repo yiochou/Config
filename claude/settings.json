@@ -23,7 +23,8 @@
   "enabledPlugins": {
     "superpowers@superpowers-marketplace": true,
     "cl-asana@cclab": true,
-    "gws@gws-marketplace": true
+    "gws@gws-marketplace": true,
+    "yio@yio-skills": true
   },
   "extraKnownMarketplaces": {
     "cclab": {
@@ -36,6 +37,12 @@
       "source": {
         "source": "git",
         "url": "https://github.com/WadeWarren/gws-claude-plugin.git"
+      }
+    },
+    "yio-skills": {
+      "source": {
+        "source": "github",
+        "repo": "yiochou/yio-skills"
       }
     }
   }
