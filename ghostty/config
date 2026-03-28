@@ -28,3 +28,6 @@ keybind = opt+j=goto_split:bottom
 keybind = opt+k=goto_split:top
 keybind = opt+l=goto_split:right
 keybind = cmd+shift+=equalize_splits
+
+# 新分頁/分割繼承當前工作目錄
+window-inherit-working-directory = true

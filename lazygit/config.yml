@@ -1,0 +1,13 @@
+gui:
+  showCommandLog: false
+  nerdFontsVersion: "3"
+  sidePanelWidth: 0.2
+git:
+  pagers:
+    - colorArg: always
+      pager: delta --paging=never
+customCommands:
+  - key: "|"
+    command: "bash -c 'v=$(git config --global delta.side-by-side); if [ \"$v\" = \"true\" ]; then git config --global delta.side-by-side false; else git config --global delta.side-by-side true; fi'"
+    context: global
+    description: "Toggle side-by-side diff"

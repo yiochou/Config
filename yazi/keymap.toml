@@ -1,0 +1,7 @@
+[mgr]
+prepend_keymap = [
+  # lazygit
+  { on = "<C-g>", run = "shell --block -- lazygit", desc = "Open lazygit" },
+  # fzf file search
+  { on = "<C-f>", run = "shell 'fd --type f --hidden --exclude .git | fzf --preview \"head -50 {}\" | xargs -r yazi' --block --confirm", desc = "fzf file search" },
+]

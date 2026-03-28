@@ -17,7 +17,31 @@ alias reload="exec ${SHELL} -l"
 alias week="date +%V"
 alias timestamp="date +%s"
 
-# IP 
+# IP
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias localip="ipconfig getifaddr en0"
 
+# === zoxide (smart cd) ===
+eval "$(zoxide init bash)"
+
+# === yazi wrapper (cd to last dir on exit) ===
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
+
+# === Terminal tab title (git repo name or directory) ===
+__update_tab_title() {
+	local repo
+	repo="$(git rev-parse --show-toplevel 2>/dev/null)"
+	if [ -n "$repo" ]; then
+		printf '\e]1;%s\a' "${repo##*/}"
+	else
+		printf '\e]1;%s\a' "${PWD##*/}"
+	fi
+}
+PROMPT_COMMAND="__update_tab_title${PROMPT_COMMAND:+;$PROMPT_COMMAND}"
