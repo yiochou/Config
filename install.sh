@@ -47,7 +47,7 @@ done
 # === CLI tools checklist ===
 echo ""
 echo "── CLI tools (brew install) ──"
-CLI_TOOLS=(yazi lazygit git-delta fzf fd ripgrep zoxide glow)
+CLI_TOOLS=(yazi lazygit git-delta fzf fd ripgrep zoxide glow micro)
 for tool in "${CLI_TOOLS[@]}"; do
     if brew list "$tool" &>/dev/null; then
         echo "  ✓ $tool"
@@ -80,6 +80,7 @@ echo ""
 echo "── Apps to install manually ──"
 APPS=(
     "Ghostty:https://ghostty.org"
+    "Zed:https://zed.dev"
     "Raycast:https://raycast.com"
     "TablePlus:https://tableplus.com"
     "OrbStack:https://orbstack.dev"

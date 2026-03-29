@@ -21,6 +21,9 @@ alias timestamp="date +%s"
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias localip="ipconfig getifaddr en0"
 
+# === editor ===
+export EDITOR="micro"
+
 # === zoxide (smart cd) ===
 eval "$(zoxide init bash)"
 
