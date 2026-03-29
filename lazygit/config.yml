@@ -2,6 +2,8 @@ gui:
   showCommandLog: false
   nerdFontsVersion: "3"
   sidePanelWidth: 0.2
+  expandFocusedSidePanel: true
+  expandedSidePanelWeight: 3
 git:
   pagers:
     - colorArg: always

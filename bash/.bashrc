@@ -22,7 +22,7 @@ alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias localip="ipconfig getifaddr en0"
 
 # === editor ===
-export EDITOR="micro"
+export EDITOR="zed --wait"
 
 # === zoxide (smart cd) ===
 eval "$(zoxide init bash)"
@@ -46,5 +46,7 @@ __update_tab_title() {
 	else
 		printf '\e]1;%s\a' "${PWD##*/}"
 	fi
+	# OSC 7: report working directory to terminal (for split inherit)
+	printf '\e]7;file://%s%s\a' "$HOSTNAME" "$PWD"
 }
 PROMPT_COMMAND="__update_tab_title${PROMPT_COMMAND:+;$PROMPT_COMMAND}"
