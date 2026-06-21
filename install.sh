@@ -5,10 +5,10 @@ CONFIG_DIR="$(cd "$(dirname "$0")" && pwd)"
 
 echo "Installing from $CONFIG_DIR..."
 
-# === bash ===
-ln -sf "$CONFIG_DIR/bash/.bashrc" ~/.bashrc
-ln -sf "$CONFIG_DIR/bash/.bash_profile" ~/.bash_profile
-ln -sf "$CONFIG_DIR/bash/.bash_prompt" ~/.bash_prompt
+# === zsh ===
+ln -sf "$CONFIG_DIR/zsh/.zshrc" ~/.zshrc
+ln -sf "$CONFIG_DIR/zsh/.zprofile" ~/.zprofile
+ln -sf "$CONFIG_DIR/zsh/.zsh_prompt" ~/.zsh_prompt
 
 # === git ===
 ln -sf "$CONFIG_DIR/git/.gitconfig" ~/.gitconfig
