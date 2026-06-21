@@ -26,11 +26,6 @@ fi
 mkdir -p "$LAZYGIT_DIR"
 ln -sf "$CONFIG_DIR/lazygit/config.yml" "$LAZYGIT_DIR/config.yml"
 
-# === yazi ===
-mkdir -p ~/.config/yazi
-ln -sf "$CONFIG_DIR/yazi/yazi.toml" ~/.config/yazi/yazi.toml
-ln -sf "$CONFIG_DIR/yazi/keymap.toml" ~/.config/yazi/keymap.toml
-
 # === claude ===
 mkdir -p ~/.claude
 ln -sf "$CONFIG_DIR/claude/settings.json" ~/.claude/settings.json
@@ -42,37 +37,6 @@ ln -sf "$CONFIG_DIR/h" ~/.local/bin/h
 chmod +x ~/.local/bin/h
 for f in "$CONFIG_DIR"/help/*; do
     ln -sf "$f" ~/.local/share/help/"$(basename "$f")"
-done
-
-# === CLI tools checklist ===
-echo ""
-echo "── CLI tools (brew install) ──"
-CLI_TOOLS=(yazi lazygit git-delta fzf fd ripgrep zoxide glow micro)
-for tool in "${CLI_TOOLS[@]}"; do
-    if brew list "$tool" &>/dev/null; then
-        echo "  ✓ $tool"
-    else
-        echo "  ✗ $tool"
-    fi
-done
-
-# === yazi plugins ===
-echo ""
-echo "── yazi plugins (ya pkg add) ──"
-YAZI_PLUGINS=(
-    "yazi-rs/plugins:piper"
-    "yazi-rs/plugins:git"
-    "yazi-rs/plugins:smart-enter"
-    "yazi-rs/plugins:full-border"
-    "yazi-rs/plugins:toggle-pane"
-)
-for pkg in "${YAZI_PLUGINS[@]}"; do
-    name="${pkg##*:}"
-    if [ -d ~/.local/state/yazi/packages/*/"${name}.yazi" ] 2>/dev/null; then
-        echo "  ✓ $name"
-    else
-        echo "  ✗ $name → ya pkg add $pkg"
-    fi
 done
 
 # === apps checklist ===
