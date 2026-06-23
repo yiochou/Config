@@ -34,10 +34,9 @@ for f in "$CONFIG_DIR/.claude/commands/"*.md; do
     [ -f "$f" ] && ln -sf "$f" ~/.claude/commands/"$(basename "$f")"
 done
 
-# === node ===
-if ! command -v node &>/dev/null; then
-    brew install node
-fi
+# === cli tools ===
+command -v node    &>/dev/null || brew install node
+command -v zoxide  &>/dev/null || brew install zoxide
 
 # === help system (Yio Command Center) ===
 mkdir -p ~/.local/bin ~/.local/share/help
