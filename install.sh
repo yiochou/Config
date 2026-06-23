@@ -34,6 +34,11 @@ for f in "$CONFIG_DIR/.claude/commands/"*.md; do
     [ -f "$f" ] && ln -sf "$f" ~/.claude/commands/"$(basename "$f")"
 done
 
+# === node ===
+if ! command -v node &>/dev/null; then
+    brew install node
+fi
+
 # === help system (Yio Command Center) ===
 mkdir -p ~/.local/bin ~/.local/share/help
 ln -sf "$CONFIG_DIR/h" ~/.local/bin/h
