@@ -34,6 +34,16 @@ for f in "$CONFIG_DIR/.claude/commands/"*.md; do
     [ -f "$f" ] && ln -sf "$f" ~/.claude/commands/"$(basename "$f")"
 done
 
+# === brew ===
+if [ -x /opt/homebrew/bin/brew ]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+elif [ -x /usr/local/bin/brew ]; then
+    eval "$(/usr/local/bin/brew shellenv)"
+elif ! command -v brew &>/dev/null; then
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
 # === node ===
 if ! command -v node &>/dev/null; then
     brew install node
