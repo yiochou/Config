@@ -3,6 +3,10 @@ set -e
 
 CONFIG_DIR="$(cd "$(dirname "$0")" && pwd)"
 
+# Ensure brew is in PATH (not loaded in non-login zsh shells)
+[[ -x /opt/homebrew/bin/brew ]] && eval "$(/opt/homebrew/bin/brew shellenv)"
+[[ -x /usr/local/bin/brew ]] && eval "$(/usr/local/bin/brew shellenv)"
+
 echo "Installing from $CONFIG_DIR..."
 
 # === zsh ===
@@ -30,8 +34,8 @@ ln -sf "$CONFIG_DIR/lazygit/config.yml" "$LAZYGIT_DIR/config.yml"
 mkdir -p ~/.claude ~/.claude/commands
 ln -sf "$CONFIG_DIR/claude/settings.json" ~/.claude/settings.json
 ln -sf "$CONFIG_DIR/claude/CLAUDE.md" ~/.claude/CLAUDE.md
-for f in "$CONFIG_DIR/.claude/commands/"*.md; do
-    [ -f "$f" ] && ln -sf "$f" ~/.claude/commands/"$(basename "$f")"
+for f in "$CONFIG_DIR/.claude/commands/"*.md(N); do
+    ln -sf "$f" ~/.claude/commands/"$(basename "$f")"
 done
 
 # === cli tools ===
@@ -66,6 +70,45 @@ for entry in "${APPS[@]}"; do
     fi
 done
 
+
+echo ""
+echo "── Zen extensions ──"
+ZEN_EXT_DIR=$(python3 -c "
+import configparser, os
+ini = os.path.expanduser('~/Library/Application Support/zen/profiles.ini')
+if not os.path.exists(ini): exit()
+c = configparser.ConfigParser()
+c.read(ini)
+# Active profile is in [Install...] section's Default key
+for s in c.sections():
+    if s.startswith('Install'):
+        path = c.get(s, 'Default', fallback='')
+        if path:
+            print(os.path.expanduser(f'~/Library/Application Support/zen/{path}/extensions'))
+            break
+" 2>/dev/null)
+ZEN_EXTENSIONS=(
+    "1Password – Password Manager|{d634138d-c276-4fc8-924b-40a0ea21d284}|1password-x-password-manager"
+    "AdBlocker Ultimate|adblockultimate@adblockultimate.net|adblocker-ultimate"
+    "Checker Plus for Gmail|checkerplusforgmail@jasonsavard.com|checker-plus-gmail"
+    "Checker Plus for Google Calendar|checkerplusforgooglecalendar@jasonsavard.com|checker-plus-for-calendar"
+    "Dark Reader|addon@darkreader.org|darkreader"
+    "ScTranslator|{afebda95-fffb-45fb-b793-07b5ba8571c5}|sctranslator"
+    "Search by Image|{2e5ff8c8-32fe-46d0-9fc8-6b8986621f3c}|search-by-image"
+    "Stylebot|{52bda3fd-dc48-4b3d-a7b9-58af57879f1e}|stylebot"
+)
+if [ -z "$ZEN_EXT_DIR" ] || [ ! -d "$ZEN_EXT_DIR" ]; then
+    echo "  (Zen not installed)"
+else
+    for entry in "${ZEN_EXTENSIONS[@]}"; do
+        IFS='|' read -r name id slug <<< "$entry"
+        if [ -f "$ZEN_EXT_DIR/$id.xpi" ]; then
+            echo "  ✓ $name"
+        else
+            echo "  ✗ $name → https://addons.mozilla.org/firefox/addon/$slug/"
+        fi
+    done
+fi
 
 echo ""
 echo "Done!"
