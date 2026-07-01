@@ -46,3 +46,9 @@ __update_tab_title() {
 	printf '\e]7;file://%s%s\a' "$HOSTNAME" "$PWD"
 }
 precmd_functions+=(__update_tab_title)
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/yiochou/projects/SO-101-course/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/yiochou/projects/SO-101-course/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/yiochou/projects/SO-101-course/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/yiochou/projects/SO-101-course/google-cloud-sdk/completion.zsh.inc'; fi

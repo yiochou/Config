@@ -45,5 +45,6 @@
         "repo": "yiochou/yio-skills"
       }
     }
-  }
+  },
+  "tui": "fullscreen"
 }
