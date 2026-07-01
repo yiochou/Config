@@ -18,7 +18,7 @@
   },
   "statusLine": {
     "type": "command",
-    "command": "bash /Users/yiochou/.claude/statusline-command.sh"
+    "command": "input=$(cat)\ncwd=$(printf '%s' \"$input\" | jq -r '.workspace.current_dir // .cwd')\ndir=\"${cwd/#$HOME/~}\"\nuser=$(whoami)\nif [ \"$user\" = \"root\" ]; then ucode=124; else ucode=166; fi\nprintf '\\033[38;5;%sm%s\\033[0m' \"$ucode\" \"$user\"\nif [ -n \"$SSH_TTY\" ]; then\nhost=$(hostname -s)\nprintf ' \\033[38;5;15mat \\033[38;5;124m%s\\033[0m' \"$host\"\nfi\nprintf ' \\033[38;5;64m%s\\033[0m' \"$dir\"\nif git -C \"$cwd\" --no-optional-locks rev-parse --is-inside-work-tree >/dev/null 2>&1; then\nbranch=$(git -C \"$cwd\" --no-optional-locks symbolic-ref --quiet --short HEAD 2>/dev/null)\nif [ -z \"$branch\" ]; then\nbranch=$(git -C \"$cwd\" --no-optional-locks rev-parse --short HEAD 2>/dev/null)\nfi\ns=\"\"\ngit -C \"$cwd\" --no-optional-locks diff --quiet --ignore-submodules --cached 2>/dev/null\nif [ \"$?\" -ne 0 ]; then s=\"${s}+\"; fi\ngit -C \"$cwd\" --no-optional-locks diff-files --quiet --ignore-submodules -- 2>/dev/null\nif [ \"$?\" -ne 0 ]; then s=\"${s}!\"; fi\nuntracked=$(git -C \"$cwd\" --no-optional-locks ls-files --others --exclude-standard)\nif [ -n \"$untracked\" ]; then s=\"${s}?\"; fi\ngit -C \"$cwd\" --no-optional-locks rev-parse --verify refs/stash >/dev/null 2>&1\nif [ \"$?\" -eq 0 ]; then s=\"${s}\\$\"; fi\nif [ -n \"$s\" ]; then s=\" [$s]\"; fi\nprintf ' \\033[38;5;15mon \\033[38;5;61m%s\\033[38;5;33m%s\\033[0m' \"$branch\" \"$s\"\nfi\nprintf '\\n'"
   },
   "enabledPlugins": {
     "superpowers@superpowers-marketplace": true,
