@@ -24,7 +24,9 @@
     "superpowers@superpowers-marketplace": true,
     "cl-asana@cclab": true,
     "gws@gws-marketplace": true,
-    "yio@yio-skills": true
+    "yio@yio-skills": true,
+    "superpowers@claude-plugins-official": true,
+    "context7@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "cclab": {
@@ -46,5 +48,6 @@
       }
     }
   },
-  "tui": "fullscreen"
+  "tui": "fullscreen",
+  "preferredNotifChannel": "ghostty"
 }
