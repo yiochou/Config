@@ -10,6 +10,7 @@
 ── 工具 ───────────────────────────────────────────────────────
 
   ll             ls -alh
+  md             用 Typora 開啟檔案(open -a Typora)
   reload         重新載入 shell
   path           顯示 PATH（每行一個）
   week           目前第幾週

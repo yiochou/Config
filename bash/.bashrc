@@ -7,6 +7,7 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias ll="ls -alh"
+alias md="open -a Typora"
 alias grep="grep --color=auto"
 alias path='echo -e ${PATH//:/\\n}'
 
