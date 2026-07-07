@@ -45,6 +45,9 @@ done
 command -v node    &>/dev/null || brew install node
 command -v zoxide  &>/dev/null || brew install zoxide
 
+# Zed CLI (app itself is in the manual apps checklist)
+[ -d /Applications/Zed.app ] && ln -sf /Applications/Zed.app/Contents/MacOS/cli ~/.local/bin/zed
+
 # === help system (Yio Command Center) ===
 mkdir -p ~/.local/bin ~/.local/share/help
 ln -sf "$CONFIG_DIR/h" ~/.local/bin/h
