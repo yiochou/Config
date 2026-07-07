@@ -35,6 +35,7 @@ description: 自由對話發想,結束時 (/jam end) 總結存檔到 ~/Projects/
    c. 更新 `~/Projects/jam/INDEX.md` 的表格,新增一列(Date | Title | Description | Tags | File | Continued From),依日期附加在表格最後。
    d. `cd ~/Projects/jam && git add -A && git commit -m "<title>" && git push`
    e. 完成後跟使用者確認檔案路徑與 commit/push 是否成功。
+   f. 最後單獨一行輸出:`[kissa:saved <筆記檔絕對路徑>]`(完成訊號,供 kissa 等外部工具偵測存檔完成;一般對話中看到這行可忽略)。
 
 ## 如果參數是主題或關鍵字(不是 `end`)
 
