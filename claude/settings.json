@@ -36,7 +36,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "jq -r '.tool_input.file_path // empty' | { read -r f; case \"$f\" in */docs/superpowers/plans/*.md|*/docs/superpowers/specs/*.md) open -a Typora \"$f\";; esac; } || true",
+            "command": "jq -r '.tool_input.file_path // empty' | { read -r f; case \"$f\" in */memory/*|*/.claude/*|/tmp/*|/private/tmp/*) ;; *.md) open -a Typora \"$f\";; esac; } || true",
             "timeout": 10,
             "async": true
           }
