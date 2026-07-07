@@ -22,7 +22,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "sh ~/.claude/hooks/tab-notify.sh mark; afplay ~/.claude/sounds/notification.mp3",
+            "command": "sh ~/.claude/hooks/tab-notify.sh mark; afplay -v 0.4 ~/.claude/sounds/notification.mp3",
             "timeout": 5,
             "async": true
           }
@@ -34,7 +34,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "sh ~/.claude/hooks/tab-notify.sh mark; afplay ~/.claude/sounds/notification.mp3",
+            "command": "sh ~/.claude/hooks/tab-notify.sh mark; afplay -v 0.4 ~/.claude/sounds/notification.mp3",
             "timeout": 5,
             "async": true
           }
