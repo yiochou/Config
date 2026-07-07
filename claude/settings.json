@@ -22,7 +22,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "sh ~/.claude/hooks/tab-notify.sh mark; afplay -v 0.4 ~/.claude/sounds/notification.mp3",
+            "command": "afplay -v 0.4 ~/.claude/sounds/notification.mp3",
             "timeout": 5,
             "async": true
           }
@@ -34,19 +34,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "sh ~/.claude/hooks/tab-notify.sh mark; afplay -v 0.4 ~/.claude/sounds/notification.mp3",
-            "timeout": 5,
-            "async": true
-          }
-        ]
-      }
-    ],
-    "UserPromptSubmit": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "sh ~/.claude/hooks/tab-notify.sh clear",
+            "command": "jq -e '.message | test(\"waiting for your input\"; \"i\")' >/dev/null 2>&1 && exit 0; afplay -v 0.4 ~/.claude/sounds/notification.mp3",
             "timeout": 5,
             "async": true
           }
