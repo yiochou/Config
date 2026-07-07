@@ -5,6 +5,9 @@ font-thicken = true
 # macOS Option 鍵當 Alt（Claude Code 快捷鍵必要）
 macos-option-as-alt = true
 
+# 讓 Claude Code 完成回應時的鈴聲有音效
+bell-features = audio
+
 # 剪貼簿（Claude Code Ctrl+V 貼圖需要）
 clipboard-read = allow
 clipboard-write = allow
