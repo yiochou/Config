@@ -17,6 +17,19 @@
     ]
   },
   "hooks": {
+    "PermissionRequest": [
+      {
+        "matcher": "ExitPlanMode",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "jq -r '.tool_input.planFilePath // empty' | { read -r f; [ -n \"$f\" ] && open -a Typora \"$f\"; } || true",
+            "timeout": 10,
+            "async": true
+          }
+        ]
+      }
+    ],
     "Stop": [
       {
         "hooks": [
