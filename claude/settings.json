@@ -16,6 +16,32 @@
       "Bash(rm -rf:*)"
     ]
   },
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "afplay ~/.claude/sounds/notification.mp3",
+            "timeout": 5,
+            "async": true
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "afplay ~/.claude/sounds/notification.mp3",
+            "timeout": 5,
+            "async": true
+          }
+        ]
+      }
+    ]
+  },
   "statusLine": {
     "type": "command",
     "command": "bash ~/.claude/hooks/statusline.sh"
@@ -50,18 +76,5 @@
   },
   "tui": "fullscreen",
   "preferredNotifChannel": "ghostty",
-  "hooks": {
-    "Stop": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "afplay ~/.claude/sounds/notification.mp3",
-            "async": true,
-            "timeout": 5
-          }
-        ]
-      }
-    ]
-  }
+  "model": "claude-fable-5[1m]"
 }
