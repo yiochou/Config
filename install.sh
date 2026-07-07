@@ -31,9 +31,12 @@ mkdir -p "$LAZYGIT_DIR"
 ln -sf "$CONFIG_DIR/lazygit/config.yml" "$LAZYGIT_DIR/config.yml"
 
 # === claude ===
-mkdir -p ~/.claude ~/.claude/commands
+mkdir -p ~/.claude ~/.claude/commands ~/.claude/hooks
 ln -sf "$CONFIG_DIR/claude/settings.json" ~/.claude/settings.json
 ln -sf "$CONFIG_DIR/claude/CLAUDE.md" ~/.claude/CLAUDE.md
+for f in "$CONFIG_DIR/claude/hooks/"*(N); do
+    ln -sf "$f" ~/.claude/hooks/"$(basename "$f")"
+done
 for f in "$CONFIG_DIR/.claude/commands/"*.md(N); do
     ln -sf "$f" ~/.claude/commands/"$(basename "$f")"
 done
