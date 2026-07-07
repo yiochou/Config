@@ -49,5 +49,19 @@
     }
   },
   "tui": "fullscreen",
-  "preferredNotifChannel": "ghostty"
+  "preferredNotifChannel": "ghostty",
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "afplay ~/.claude/sounds/notification.mp3",
+            "async": true,
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  }
 }
