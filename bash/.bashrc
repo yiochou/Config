@@ -22,6 +22,8 @@ alias timestamp="date +%s"
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias localip="ipconfig getifaddr en0"
 
+alias kissa="uv run --directory ~/projects/kissa kissa"
+
 # === editor ===
 export EDITOR="zed --wait"
 

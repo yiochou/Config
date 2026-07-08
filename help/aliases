@@ -25,3 +25,4 @@
 
   y              yazi 檔案瀏覽器（退出後 cd 到最後位置）
   z <keyword>    zoxide 跳目錄（智能記憶常用路徑）
+  kissa          啟動 kissa（uv run --directory ~/projects/kissa kissa）
