@@ -40,6 +40,11 @@ done
 for f in "$CONFIG_DIR/.claude/commands/"*.md(N); do
     ln -sf "$f" ~/.claude/commands/"$(basename "$f")"
 done
+# jam skill lives in the jam notes repo (see its README)
+if [[ -d ~/Projects/jam/skills/jam ]]; then
+    mkdir -p ~/.claude/skills
+    ln -sfn ~/Projects/jam/skills/jam ~/.claude/skills/jam
+fi
 
 # === cli tools ===
 command -v node    &>/dev/null || brew install node
