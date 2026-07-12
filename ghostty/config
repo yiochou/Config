@@ -20,8 +20,8 @@ window-padding-balance = true
 cursor-style = bar
 cursor-style-blink = false
 
-# tmux 內 Shift+Enter 修復
-keybind = shift+enter=text:\x1b\r
+# Shift+Enter 送標準 CSI-u 序列：Claude Code(kitty protocol)與 kissa(Textual)都解析為換行
+keybind = shift+enter=csi:13;2u
 
 # Ghostty 原生分割（tmux 外使用時）
 keybind = cmd+'=new_split:right
