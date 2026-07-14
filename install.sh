@@ -21,6 +21,10 @@ ln -sf "$CONFIG_DIR/git/.gitconfig" ~/.gitconfig
 mkdir -p ~/.config/ghostty
 ln -sf "$CONFIG_DIR/ghostty/config" ~/.config/ghostty/config
 
+# === otty ===
+mkdir -p ~/.config/otty
+ln -sf "$CONFIG_DIR/otty/config.toml" ~/.config/otty/config.toml
+
 # === lazygit ===
 if [ "$(uname)" = "Darwin" ]; then
     LAZYGIT_DIR=~/Library/Application\ Support/lazygit
@@ -66,6 +70,7 @@ echo ""
 echo "── Apps to install manually ──"
 APPS=(
     "Ghostty:https://ghostty.org"
+    "Otty:https://otty.sh"
     "Zed:https://zed.dev"
     "Raycast:https://raycast.com"
     "TablePlus:https://tableplus.com"
