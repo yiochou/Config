@@ -16,6 +16,7 @@
       "Bash(rm -rf:*)"
     ]
   },
+  "model": "claude-fable-5[1m]",
   "hooks": {
     "PermissionRequest": [
       {
@@ -87,7 +88,7 @@
       }
     }
   },
+  "advisorModel": "fable",
   "tui": "fullscreen",
-  "preferredNotifChannel": "ghostty",
-  "model": "claude-fable-5[1m]"
+  "preferredNotifChannel": "ghostty"
 }
