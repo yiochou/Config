@@ -1,0 +1,29 @@
+# Otty 快捷鍵
+
+── 分割 ───────────────────────────────────────────────────────
+
+  Cmd+'            左右分割（split_right）
+  Cmd+Shift+'      上下分割（split_down）
+  Cmd+Ctrl+方向鍵   切換 pane
+  Cmd+[ / Cmd+]    上一個 / 下一個 pane
+  Cmd+Ctrl+=       平均分配 pane 大小
+  Cmd+Shift+Enter  Zoom 目前 pane
+
+── 通知設定（otty config set <key> <value>）──────────────────
+
+  privilege-notification-on-finish   指令完成時通知
+  privilege-notification-on-error    指令出錯時通知
+  privilege-notify-agent-task-complete    agent 任務完成通知
+  privilege-notify-agent-awaiting-input   agent 等待輸入通知
+  notification-sound                 通知音效
+
+── 常用指令 ───────────────────────────────────────────────────
+
+  otty watch <cmd>       跑長指令，結束時顯示徽章＋通知
+  otty config show       檢視設定
+  otty config reload     重載設定（改完 config 後執行）
+  otty keybind list      列出所有快捷鍵
+
+── 設定檔位置 ─────────────────────────────────────────────────
+
+  ~/.config/otty/config.toml（symlink → Config repo otty/config.toml）
