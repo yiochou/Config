@@ -14,9 +14,9 @@
       "Bash(git push --force:*)",
       "Bash(git reset --hard:*)",
       "Bash(rm -rf:*)"
-    ]
+    ],
+    "defaultMode": "auto"
   },
-  "model": "claude-fable-5[1m]",
   "hooks": {
     "PermissionRequest": [
       {
@@ -61,20 +61,12 @@
     "command": "bash ~/.claude/hooks/statusline.sh"
   },
   "enabledPlugins": {
-    "superpowers@superpowers-marketplace": true,
-    "cl-asana@cclab": true,
-    "gws@gws-marketplace": true,
+    "gws@gws-marketplace": false,
     "yio@yio-skills": true,
     "superpowers@claude-plugins-official": true,
     "context7@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
-    "cclab": {
-      "source": {
-        "source": "github",
-        "repo": "chatbotgang/cclab"
-      }
-    },
     "gws-marketplace": {
       "source": {
         "source": "git",
