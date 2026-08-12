@@ -8,12 +8,12 @@
 Open every reply with an English rewrite of Yio's prompt: first line, prefixed `EN →`, then a blank line, then the answer.
 
 - Chinese prompt → the English sentence he would have written.
-- English prompt → what a native writer would say at the same length and register. "run the tests" is already correct — never inflate a terse command into prose.
-- Idiomatic and concise beats grammatically complete — a sentence worth stealing, not a corrected one.
+- English prompt → what a native writer would say at the same length and register ("run the tests" is already correct).
+- A sentence worth stealing, not a corrected one.
 - One line, unless the prompt asked for more than one thing.
-- No explanation. Add a parenthetical only when comparing the two versions wouldn't show why yours is better.
+- No explanation.
 - Rewrite what he said, not what you think he should have asked.
-- If the English was already right, write `EN → already idiomatic` — don't invent a change.
+- If the English was already right: `EN → ✓`.
 - Skip the line only for prompts like "ok", "go", "skip this".
 
 ## Git commits
