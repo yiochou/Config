@@ -21,15 +21,6 @@ ln -sf "$CONFIG_DIR/git/.gitconfig" ~/.gitconfig
 mkdir -p ~/.config/ghostty
 ln -sf "$CONFIG_DIR/ghostty/config" ~/.config/ghostty/config
 
-# === lazygit ===
-if [ "$(uname)" = "Darwin" ]; then
-    LAZYGIT_DIR=~/Library/Application\ Support/lazygit
-else
-    LAZYGIT_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/lazygit"
-fi
-mkdir -p "$LAZYGIT_DIR"
-ln -sf "$CONFIG_DIR/lazygit/config.yml" "$LAZYGIT_DIR/config.yml"
-
 # === claude ===
 mkdir -p ~/.claude ~/.claude/hooks ~/.claude/sounds
 ln -sf "$CONFIG_DIR/claude/settings.json" ~/.claude/settings.json
@@ -63,8 +54,7 @@ CLI_TOOLS=(
     "node:node"
     "zoxide:zoxide"
     "jq:jq"          # statusline.sh + the ExitPlanMode/Notification hooks
-    "delta:git-delta" # .gitconfig core.pager and lazygit's pager
-    "lazygit:lazygit"
+    "delta:git-delta" # .gitconfig core.pager
 )
 for entry in "${CLI_TOOLS[@]}"; do
     command -v "${entry%%:*}" &>/dev/null || brew install "${entry#*:}"
