@@ -35,11 +35,15 @@ mkdir -p "$LAZYGIT_DIR"
 ln -sf "$CONFIG_DIR/lazygit/config.yml" "$LAZYGIT_DIR/config.yml"
 
 # === claude ===
-mkdir -p ~/.claude ~/.claude/hooks
+mkdir -p ~/.claude ~/.claude/hooks ~/.claude/sounds
 ln -sf "$CONFIG_DIR/claude/settings.json" ~/.claude/settings.json
 ln -sf "$CONFIG_DIR/claude/CLAUDE.md" ~/.claude/CLAUDE.md
 for f in "$CONFIG_DIR/claude/hooks/"*(N); do
     ln -sf "$f" ~/.claude/hooks/"$(basename "$f")"
+done
+# sounds referenced by the Stop / Notification hooks in settings.json
+for f in "$CONFIG_DIR/claude/sounds/"*(N); do
+    ln -sf "$f" ~/.claude/sounds/"$(basename "$f")"
 done
 # jam skill lives in the jam notes repo (see its README)
 if [[ -d ~/Projects/jam/skills/jam ]]; then
@@ -58,8 +62,17 @@ if command -v claude &>/dev/null; then
 fi
 
 # === cli tools ===
-command -v node    &>/dev/null || brew install node
-command -v zoxide  &>/dev/null || brew install zoxide
+# "command:formula" — formula name differs from the binary for delta.
+CLI_TOOLS=(
+    "node:node"
+    "zoxide:zoxide"
+    "jq:jq"          # statusline.sh + the ExitPlanMode/Notification hooks
+    "delta:git-delta" # .gitconfig core.pager and lazygit's pager
+    "lazygit:lazygit"
+)
+for entry in "${CLI_TOOLS[@]}"; do
+    command -v "${entry%%:*}" &>/dev/null || brew install "${entry#*:}"
+done
 
 # Zed CLI (app itself is in the manual apps checklist)
 [ -d /Applications/Zed.app ] && ln -sf /Applications/Zed.app/Contents/MacOS/cli ~/.local/bin/zed

@@ -27,16 +27,6 @@ export EDITOR="zed --wait"
 # === zoxide (smart cd) ===
 eval "$(zoxide init zsh)"
 
-# === yazi wrapper (cd to last dir on exit) ===
-function y() {
-	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
-	yazi "$@" --cwd-file="$tmp"
-	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-		cd -- "$cwd"
-	fi
-	rm -f -- "$tmp"
-}
-
 # === Terminal tab title + OSC 7 (for split inherit) ===
 __update_tab_title() {
 	local repo
@@ -46,7 +36,7 @@ __update_tab_title() {
 	else
 		printf '\e]1;%s\a' "${PWD##*/}"
 	fi
-	printf '\e]7;file://%s%s\a' "$HOSTNAME" "$PWD"
+	printf '\e]7;file://%s%s\a' "$HOST" "$PWD"
 }
 precmd_functions+=(__update_tab_title)
 

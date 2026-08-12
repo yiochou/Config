@@ -5,30 +5,37 @@ Personal dotfiles managed with symlinks.
 ## Structure
 
 ```
-bash/           .bashrc, .bash_profile, .bash_prompt
+zsh/            .zshrc, .zprofile, .zsh_prompt
 git/            .gitconfig
-tmux/           .tmux.conf (Ghostty + Claude Code optimized)
 ghostty/        Ghostty terminal config
-claude/         Claude Code settings.json + CLAUDE.md
+otty/           Otty terminal config
+lazygit/        lazygit config
+claude/         Claude Code settings.json, CLAUDE.md, hooks, sounds, skills
 help/           Yio Command Center topics
 h               help system entry point
+install.sh      symlinks everything into place
 ```
 
 ## Install
 
 ```bash
-git clone git@github.com:yiochou/Config.git ~/Projects/Config
-cd ~/Projects/Config
+git clone git@github.com:yiochou/Config.git ~/projects/Config
+cd ~/projects/Config
 ./install.sh
 ```
 
 All configs are symlinked to their expected locations. Editing either side updates the same file.
 
+`install.sh` also installs the CLI tools the configs depend on (node, zoxide, jq,
+git-delta, lazygit) and prints a checklist of GUI apps and Zen extensions to
+install by hand.
+
 ## What's Included
 
-- **Bash** — aliases, prompt with git status
-- **Git** — aliases (lg, co, br, st)
-- **tmux** — Ctrl+A prefix, vim navigation, Claude Code passthrough, TPM + resurrect
-- **Ghostty** — macOS option-as-alt, clipboard, Shift+Enter fix for tmux
-- **Claude Code** — permissions, plugins, behavioral preferences
-- **Yio Command Center** — `h` command for quick reference (`h tmux`, `h ghostty`, `h aliases`)
+- **zsh** — aliases, prompt with git status, zoxide, OSC 7 for split inherit
+- **Git** — aliases (lg, co, br, st), delta pager, zdiff3 conflict style
+- **Ghostty** — macOS option-as-alt, clipboard, Shift+Enter as CSI-u, native splits
+- **Otty** — Nord palette, splits matching the Ghostty keybinds
+- **lazygit** — delta pager, side-by-side toggle on `|`
+- **Claude Code** — permissions, plugins, hooks, two-column statusLine, `config-sync` skill
+- **Yio Command Center** — `h` command for quick reference (`h aliases`, `h ghostty`, `h otty`)
