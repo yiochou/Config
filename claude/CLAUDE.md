@@ -17,5 +17,14 @@ Open every reply with an English rewrite of Yio's prompt: first line, prefixed `
 - If the English was already right, write `EN → already idiomatic` rather than inventing a change.
 - Skip the line only for trivial prompts ("ok", "go", "skip this") where there is nothing to learn.
 
+## Git commits
+Always English, in every repo.
+
+- **Subject** — imperative, capitalized, no trailing period, 72 characters max.
+- **No `feat:` / `fix:` / `chore:` prefixes.** Nothing parses them here — no commitlint, no semantic-release. A repo with a genuine taxonomy of its own (nib's `corpus:`, `rep:`) keeps it; its CLAUDE.md wins.
+- **Body** — write one whenever the subject leaves the *why* unclear. Prose for a single rationale, bullets for a multi-item cleanup. Wrap at 72. Lead with why and with what broke; the diff already says what changed.
+- **Prose style** — one idea per sentence. Active voice over nominalization: "delta was missing", not "the absence of delta". One word per concept — don't alternate symlink / link / symbolic link within a message.
+- **No `Co-Authored-By` trailer.** This overrides the harness default; do not add it back.
+
 ## Config Sync
-Personal configs are centralized in ~/Projects/Config via symlinks. After modifying any tracked config file, proactively remind me to sync (commit + push). git push requires my approval.
+Personal configs are centralized in ~/projects/Config via symlinks. After modifying any tracked config file, proactively remind me to sync (commit + push). git push requires my approval.
