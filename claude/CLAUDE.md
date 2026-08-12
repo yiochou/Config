@@ -1,7 +1,7 @@
 # Yio's Claude Code Preferences
 
 Response style and the `EN →` prompt rewrite live in the Yio output
-style, not here — see `claude/output-styles/yio.md`. Subagents never see
+style, not here — see `~/.claude/output-styles/yio.md`. Subagents never see
 that style, so anything a subagent must obey belongs in this file.
 
 ## Git commits
