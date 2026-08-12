@@ -35,19 +35,26 @@ mkdir -p "$LAZYGIT_DIR"
 ln -sf "$CONFIG_DIR/lazygit/config.yml" "$LAZYGIT_DIR/config.yml"
 
 # === claude ===
-mkdir -p ~/.claude ~/.claude/commands ~/.claude/hooks
+mkdir -p ~/.claude ~/.claude/hooks
 ln -sf "$CONFIG_DIR/claude/settings.json" ~/.claude/settings.json
 ln -sf "$CONFIG_DIR/claude/CLAUDE.md" ~/.claude/CLAUDE.md
 for f in "$CONFIG_DIR/claude/hooks/"*(N); do
     ln -sf "$f" ~/.claude/hooks/"$(basename "$f")"
 done
-for f in "$CONFIG_DIR/.claude/commands/"*.md(N); do
-    ln -sf "$f" ~/.claude/commands/"$(basename "$f")"
-done
 # jam skill lives in the jam notes repo (see its README)
 if [[ -d ~/Projects/jam/skills/jam ]]; then
     mkdir -p ~/.claude/skills
     ln -sfn ~/Projects/jam/skills/jam ~/.claude/skills/jam
+fi
+# skills that live in this repo
+mkdir -p ~/.claude/skills
+ln -sfn "$CONFIG_DIR/claude/skills/config-sync" ~/.claude/skills/config-sync
+
+# generic skills/commands live in the skills plugin (github.com/yiochou/skills)
+# NOTE: private repo — needs gh/git auth first on a fresh machine
+if command -v claude &>/dev/null; then
+    claude plugin marketplace add yiochou/skills 2>/dev/null || true
+    claude plugin install yio@skills 2>/dev/null || true
 fi
 
 # === cli tools ===
