@@ -8,7 +8,6 @@ Personal dotfiles managed with symlinks.
 zsh/            .zshrc, .zprofile, .zsh_prompt
 git/            .gitconfig
 ghostty/        Ghostty terminal config
-otty/           Otty terminal config
 lazygit/        lazygit config
 claude/         Claude Code settings.json, CLAUDE.md, hooks, sounds, skills
 help/           Yio Command Center topics
@@ -35,7 +34,6 @@ install by hand.
 - **zsh** — aliases, prompt with git status, zoxide, OSC 7 for split inherit
 - **Git** — aliases (lg, co, br, st), delta pager, zdiff3 conflict style
 - **Ghostty** — macOS option-as-alt, clipboard, Shift+Enter as CSI-u, native splits
-- **Otty** — Nord palette, splits matching the Ghostty keybinds
 - **lazygit** — delta pager, side-by-side toggle on `|`
 - **Claude Code** — permissions, plugins, hooks, two-column statusLine, `config-sync` skill
-- **Yio Command Center** — `h` command for quick reference (`h aliases`, `h ghostty`, `h otty`)
+- **Yio Command Center** — `h` command for quick reference (`h aliases`, `h ghostty`, `h lazygit`)

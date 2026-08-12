@@ -21,10 +21,6 @@ ln -sf "$CONFIG_DIR/git/.gitconfig" ~/.gitconfig
 mkdir -p ~/.config/ghostty
 ln -sf "$CONFIG_DIR/ghostty/config" ~/.config/ghostty/config
 
-# === otty ===
-mkdir -p ~/.config/otty
-ln -sf "$CONFIG_DIR/otty/config.toml" ~/.config/otty/config.toml
-
 # === lazygit ===
 if [ "$(uname)" = "Darwin" ]; then
     LAZYGIT_DIR=~/Library/Application\ Support/lazygit
