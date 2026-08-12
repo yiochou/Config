@@ -46,11 +46,6 @@ ln -sfn "$CONFIG_DIR/claude/skills/config-sync" ~/.claude/skills/config-sync
 if command -v claude &>/dev/null; then
     claude plugin marketplace add yiochou/skills 2>/dev/null || true
     claude plugin install yio@skills 2>/dev/null || true
-    # third-party skills, installed from their own marketplace, never vendored.
-    # Prune unwanted ones with /skills — it writes skillOverrides into
-    # settings.json, which this repo already tracks.
-    claude plugin marketplace add mattpocock/skills 2>/dev/null || true
-    claude plugin install mattpocock-skills@mattpocock 2>/dev/null || true
 fi
 
 # === cli tools ===
