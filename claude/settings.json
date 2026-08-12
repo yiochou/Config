@@ -190,6 +190,9 @@
       }
     }
   },
+  "attribution": {
+    "commit": ""
+  },
   "advisorModel": "fable",
   "tui": "fullscreen",
   "preferredNotifChannel": "ghostty"
