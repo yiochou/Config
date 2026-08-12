@@ -26,7 +26,10 @@ selection-background = "#e5e9f0"
 cursor-color = "#e5e9f0"
 cursor-text = "#2e3440"
 
-privilege-notification-on-finish = true
+# privilege-notification-on-finish = true (reset to default)
 
-keybind = "cmd+quote=split_right"
-keybind = "cmd+shift+quote=split_down"
+
+font-size = 15
+
+keybind = "cmd+'=split-right"
+keybind = "cmd+shift+'=split-down"

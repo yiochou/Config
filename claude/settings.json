@@ -17,6 +17,7 @@
     ],
     "defaultMode": "auto"
   },
+  "model": "claude-fable-5[1m]",
   "hooks": {
     "PermissionRequest": [
       {
@@ -29,6 +30,16 @@
             "async": true
           }
         ]
+      },
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [ -f '/Users/yiochou/.orca/agent-hooks/claude-hook.sh' ] && [ -r '/Users/yiochou/.orca/agent-hooks/claude-hook.sh' ] && [ -x '/Users/yiochou/.orca/agent-hooks/claude-hook.sh' ]; then /bin/sh '/Users/yiochou/.orca/agent-hooks/claude-hook.sh'; else { command -p cat 2>/dev/null || cat; } >/dev/null 2>&1 || :; fi",
+            "timeout": 10
+          }
+        ]
       }
     ],
     "Stop": [
@@ -39,6 +50,15 @@
             "command": "afplay -v 0.4 ~/.claude/sounds/notification.mp3",
             "timeout": 5,
             "async": true
+          }
+        ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [ -f '/Users/yiochou/.orca/agent-hooks/claude-hook.sh' ] && [ -r '/Users/yiochou/.orca/agent-hooks/claude-hook.sh' ] && [ -x '/Users/yiochou/.orca/agent-hooks/claude-hook.sh' ]; then /bin/sh '/Users/yiochou/.orca/agent-hooks/claude-hook.sh'; else { command -p cat 2>/dev/null || cat; } >/dev/null 2>&1 || :; fi",
+            "timeout": 10
           }
         ]
       }
@@ -54,6 +74,97 @@
           }
         ]
       }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [ -f '/Users/yiochou/.orca/agent-hooks/claude-hook.sh' ] && [ -r '/Users/yiochou/.orca/agent-hooks/claude-hook.sh' ] && [ -x '/Users/yiochou/.orca/agent-hooks/claude-hook.sh' ]; then /bin/sh '/Users/yiochou/.orca/agent-hooks/claude-hook.sh'; else { command -p cat 2>/dev/null || cat; } >/dev/null 2>&1 || :; fi",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "StopFailure": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [ -f '/Users/yiochou/.orca/agent-hooks/claude-hook.sh' ] && [ -r '/Users/yiochou/.orca/agent-hooks/claude-hook.sh' ] && [ -x '/Users/yiochou/.orca/agent-hooks/claude-hook.sh' ]; then /bin/sh '/Users/yiochou/.orca/agent-hooks/claude-hook.sh'; else { command -p cat 2>/dev/null || cat; } >/dev/null 2>&1 || :; fi",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "SubagentStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [ -f '/Users/yiochou/.orca/agent-hooks/claude-hook.sh' ] && [ -r '/Users/yiochou/.orca/agent-hooks/claude-hook.sh' ] && [ -x '/Users/yiochou/.orca/agent-hooks/claude-hook.sh' ]; then /bin/sh '/Users/yiochou/.orca/agent-hooks/claude-hook.sh'; else { command -p cat 2>/dev/null || cat; } >/dev/null 2>&1 || :; fi",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "SubagentStop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [ -f '/Users/yiochou/.orca/agent-hooks/claude-hook.sh' ] && [ -r '/Users/yiochou/.orca/agent-hooks/claude-hook.sh' ] && [ -x '/Users/yiochou/.orca/agent-hooks/claude-hook.sh' ]; then /bin/sh '/Users/yiochou/.orca/agent-hooks/claude-hook.sh'; else { command -p cat 2>/dev/null || cat; } >/dev/null 2>&1 || :; fi",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "TeammateIdle": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [ -f '/Users/yiochou/.orca/agent-hooks/claude-hook.sh' ] && [ -r '/Users/yiochou/.orca/agent-hooks/claude-hook.sh' ] && [ -x '/Users/yiochou/.orca/agent-hooks/claude-hook.sh' ]; then /bin/sh '/Users/yiochou/.orca/agent-hooks/claude-hook.sh'; else { command -p cat 2>/dev/null || cat; } >/dev/null 2>&1 || :; fi",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [ -f '/Users/yiochou/.orca/agent-hooks/claude-hook.sh' ] && [ -r '/Users/yiochou/.orca/agent-hooks/claude-hook.sh' ] && [ -x '/Users/yiochou/.orca/agent-hooks/claude-hook.sh' ]; then /bin/sh '/Users/yiochou/.orca/agent-hooks/claude-hook.sh'; else { command -p cat 2>/dev/null || cat; } >/dev/null 2>&1 || :; fi",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [ -f '/Users/yiochou/.orca/agent-hooks/claude-hook.sh' ] && [ -r '/Users/yiochou/.orca/agent-hooks/claude-hook.sh' ] && [ -x '/Users/yiochou/.orca/agent-hooks/claude-hook.sh' ]; then /bin/sh '/Users/yiochou/.orca/agent-hooks/claude-hook.sh'; else { command -p cat 2>/dev/null || cat; } >/dev/null 2>&1 || :; fi",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "PostToolUseFailure": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [ -f '/Users/yiochou/.orca/agent-hooks/claude-hook.sh' ] && [ -r '/Users/yiochou/.orca/agent-hooks/claude-hook.sh' ] && [ -x '/Users/yiochou/.orca/agent-hooks/claude-hook.sh' ]; then /bin/sh '/Users/yiochou/.orca/agent-hooks/claude-hook.sh'; else { command -p cat 2>/dev/null || cat; } >/dev/null 2>&1 || :; fi",
+            "timeout": 10
+          }
+        ]
+      }
     ]
   },
   "statusLine": {
@@ -62,9 +173,9 @@
   },
   "enabledPlugins": {
     "gws@gws-marketplace": false,
-    "yio@yio-skills": true,
     "superpowers@claude-plugins-official": true,
-    "context7@claude-plugins-official": true
+    "context7@claude-plugins-official": true,
+    "yio@skills": true
   },
   "extraKnownMarketplaces": {
     "gws-marketplace": {
@@ -73,10 +184,10 @@
         "url": "https://github.com/WadeWarren/gws-claude-plugin.git"
       }
     },
-    "yio-skills": {
+    "skills": {
       "source": {
         "source": "github",
-        "repo": "yiochou/yio-skills"
+        "repo": "yiochou/skills"
       }
     }
   },
