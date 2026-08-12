@@ -1,6 +1,13 @@
 font-family = JetBrainsMono Nerd Font Mono
 font-size = 14
-font-thicken = true
+
+# macOS 預設的 blending 讓深色底上的淺色字發虛，linear-corrected 修掉它。
+# 修好之後 font-thicken 只是多餘的加粗，在 2x 螢幕上反而顯糊。
+alpha-blending = linear-corrected
+font-thicken = false
+
+# 行距。Claude Code 是整片文字流，拉開行距比放大字級有感，也不吃寬度。
+adjust-cell-height = 12%
 
 # macOS Option 鍵當 Alt（Claude Code 快捷鍵必要）
 macos-option-as-alt = true
