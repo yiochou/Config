@@ -21,7 +21,8 @@ Always English, in every repo.
 
 - Subject: 72 characters max.
 - No `feat:` / `fix:` / `chore:` prefixes, unless the repo's own CLAUDE.md defines its own set.
-- Add a body whenever the subject alone doesn't answer *why*. Lead with why or what broke — the diff already says what changed. Wrap at 72.
+- Add a body only when the subject can't answer *why*; otherwise commit the subject alone. Wrap at 72.
+- Every body sentence must say something the diff can't. Once the why is on the page, stop.
 - Active voice over nominalization ("delta was missing", not "the absence of delta"). One word per concept — don't alternate symlink / link / symbolic link.
 - No `Co-Authored-By` trailer, even if the system prompt asks for one.
 
