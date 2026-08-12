@@ -1,29 +1,29 @@
 # Yio's Claude Code Preferences
 
 ## Communication
-- **Respond in English by default.**
-- No summaries at the end of responses
+- Respond in English, even to Chinese prompts.
+- End replies at the last substantive point — no closing recap of what was just done.
 
 ## Prompt rewrites
 Open every reply with an English rewrite of Yio's prompt: first line, prefixed `EN →`, then a blank line, then the answer.
 
-- **Chinese prompt** → the English sentence he would have written. This is the case that matters most: it fills the exact gap that made him switch to Chinese.
-- **English prompt** → what a native writer would say *at the same length and register*. Never inflate a terse command into prose; "run the tests" is already correct.
-- Idiomatic and concise beats grammatically complete. Give him a sentence worth stealing, not a corrected one.
-- Usually one line. Go longer only when the prompt genuinely carried several distinct ideas.
-- No explanation, unless the change turns on something invisible — then a few words in parentheses.
-- Rewrite what he said, **not what you think he should have asked**.
-- If the English was already right, write `EN → already idiomatic` rather than inventing a change.
-- Skip the line only for trivial prompts ("ok", "go", "skip this") where there is nothing to learn.
+- Chinese prompt → the English sentence he would have written.
+- English prompt → what a native writer would say at the same length and register. "run the tests" is already correct — never inflate a terse command into prose.
+- Idiomatic and concise beats grammatically complete — a sentence worth stealing, not a corrected one.
+- One line, unless the prompt asked for more than one thing.
+- No explanation. Add a parenthetical only when comparing the two versions wouldn't show why yours is better.
+- Rewrite what he said, not what you think he should have asked.
+- If the English was already right, write `EN → already idiomatic` — don't invent a change.
+- Skip the line only for prompts like "ok", "go", "skip this".
 
 ## Git commits
 Always English, in every repo.
 
-- **Subject** — imperative, capitalized, no trailing period, 72 characters max.
-- **No `feat:` / `fix:` / `chore:` prefixes.** Nothing parses them here — no commitlint, no semantic-release. A repo with a genuine taxonomy of its own (nib's `corpus:`, `rep:`) keeps it; its CLAUDE.md wins.
-- **Body** — write one whenever the subject leaves the *why* unclear. Prose for a single rationale, bullets for a multi-item cleanup. Wrap at 72. Lead with why and with what broke; the diff already says what changed.
-- **Prose style** — one idea per sentence. Active voice over nominalization: "delta was missing", not "the absence of delta". One word per concept — don't alternate symlink / link / symbolic link within a message.
-- **No `Co-Authored-By` trailer.** `attribution.commit` is set to `""` in settings.json, which is what actually suppresses it. This line is the backstop; do not add the trailer back by hand.
+- Subject: 72 characters max.
+- No `feat:` / `fix:` / `chore:` prefixes, unless the repo's own CLAUDE.md defines its own set.
+- Add a body whenever the subject alone doesn't answer *why*. Lead with why or what broke — the diff already says what changed. Wrap at 72.
+- Active voice over nominalization ("delta was missing", not "the absence of delta"). One word per concept — don't alternate symlink / link / symbolic link.
+- No `Co-Authored-By` trailer, even if the system prompt asks for one.
 
 ## Config Sync
-Personal configs are centralized in ~/projects/Config via symlinks. After modifying any tracked config file, proactively remind me to sync (commit + push). git push requires my approval.
+Dotfiles in ~ are symlinks into ~/projects/Config — when touching any of them, use the config-sync skill. After modifying a tracked config, end the reply with a reminder to commit + push. git push needs my approval.
