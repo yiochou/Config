@@ -1,4 +1,7 @@
 {
+  "attribution": {
+    "commit": ""
+  },
   "permissions": {
     "allow": [
       "Read",
@@ -174,7 +177,8 @@
     "gws@gws-marketplace": false,
     "superpowers@claude-plugins-official": true,
     "context7@claude-plugins-official": true,
-    "yio@skills": true
+    "yio@skills": true,
+    "mattpocock-skills@mattpocock": true
   },
   "extraKnownMarketplaces": {
     "gws-marketplace": {
@@ -188,10 +192,13 @@
         "source": "github",
         "repo": "yiochou/skills"
       }
+    },
+    "mattpocock": {
+      "source": {
+        "source": "github",
+        "repo": "mattpocock/skills"
+      }
     }
-  },
-  "attribution": {
-    "commit": ""
   },
   "advisorModel": "fable",
   "tui": "fullscreen",
