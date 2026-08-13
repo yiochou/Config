@@ -26,3 +26,10 @@
 ── 設定檔位置 ─────────────────────────────────────────────────
 
   ~/.config/ghostty/config
+
+── CLI ────────────────────────────────────────────────────────
+
+  ghostty +list-themes       互動式預覽內建主題
+  ghostty +validate-config   改完設定檔先驗一下
+  ghostty +show-config       看目前生效的完整設定
+  ghostty +show-config --default --docs   全部選項＋說明

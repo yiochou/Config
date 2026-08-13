@@ -6,8 +6,20 @@ font-size = 14
 alpha-blending = linear-corrected
 font-thicken = false
 
+# TUI 的次要文字走 SGR 2 dim，預設的 0.5 在 2x 螢幕上細字幹會糊掉。
+# 0.7 仍保得住視覺層級，但那層字從瞄得到變成讀得動。
+faint-opacity = 0.7
+
+# 保險絲，擋掉跟底色同色的字。設到 3 以上會開始壓壞 syntax highlight 和 diff 顏色。
+minimum-contrast = 1.1
+
+# 標題與強調全靠 bold，只有字重差異不夠明顯，讓它換到 bright 色階。
+bold-color = bright
+
 # 行距。Claude Code 是整片文字流，拉開行距比放大字級有感，也不吃寬度。
+# 字距同理，但橫向會吃掉可視欄數，2% 是口味，不合就拿掉。
 adjust-cell-height = 12%
+adjust-cell-width = 2%
 
 # macOS Option 鍵當 Alt（Claude Code 快捷鍵必要）
 macos-option-as-alt = true
@@ -31,6 +43,8 @@ cursor-style-blink = false
 keybind = shift+enter=csi:13;2u
 
 # Ghostty 原生分割（tmux 外使用時）
+# 預設 0.7 是為了一眼看出焦點在哪，但兩邊都要讀的時候壓得太狠。
+unfocused-split-opacity = 0.9
 keybind = cmd+'=new_split:right
 keybind = cmd+shift+'=new_split:down
 keybind = opt+h=goto_split:left
