@@ -16,6 +16,6 @@
 ── 實際用途 ───────────────────────────────────────────────────
 
   Claude Code hook 通知音效（見 claude/settings.json）
-  afplay -v 0.4 ~/.claude/sounds/notification.mp3
+  afplay -v 0.4 ~/.claude/sounds/notification.aiff
 
   Linux 對應指令：paplay / aplay
