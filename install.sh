@@ -22,9 +22,13 @@ mkdir -p ~/.config/ghostty
 ln -sf "$CONFIG_DIR/ghostty/config" ~/.config/ghostty/config
 
 # === claude ===
-mkdir -p ~/.claude ~/.claude/hooks ~/.claude/sounds
+mkdir -p ~/.claude ~/.claude/hooks ~/.claude/sounds ~/.claude/output-styles
 ln -sf "$CONFIG_DIR/claude/settings.json" ~/.claude/settings.json
 ln -sf "$CONFIG_DIR/claude/CLAUDE.md" ~/.claude/CLAUDE.md
+# response style; selected by "outputStyle" in settings.json
+for f in "$CONFIG_DIR/claude/output-styles/"*(N); do
+    ln -sf "$f" ~/.claude/output-styles/"$(basename "$f")"
+done
 for f in "$CONFIG_DIR/claude/hooks/"*(N); do
     ln -sf "$f" ~/.claude/hooks/"$(basename "$f")"
 done

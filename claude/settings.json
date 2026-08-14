@@ -211,6 +211,7 @@
       }
     }
   },
+  "outputStyle": "Yio",
   "advisorModel": "fable",
   "tui": "fullscreen",
   "preferredNotifChannel": "ghostty"
