@@ -21,6 +21,15 @@ ln -sf "$CONFIG_DIR/git/.gitconfig" ~/.gitconfig
 mkdir -p ~/.config/ghostty
 ln -sf "$CONFIG_DIR/ghostty/config" ~/.config/ghostty/config
 
+# === typora ===
+# Typora only lists a theme after a restart; select it in Themes → Forest.
+TYPORA_THEMES="$HOME/Library/Application Support/abnerworks.Typora/themes"
+if [ -d "$TYPORA_THEMES" ]; then
+    for f in "$CONFIG_DIR/typora/"*.css(N); do
+        ln -sf "$f" "$TYPORA_THEMES/$(basename "$f")"
+    done
+fi
+
 # === claude ===
 mkdir -p ~/.claude ~/.claude/hooks ~/.claude/sounds ~/.claude/output-styles
 ln -sf "$CONFIG_DIR/claude/settings.json" ~/.claude/settings.json
@@ -84,6 +93,7 @@ APPS=(
     "Zed:https://zed.dev"
     "Raycast:https://raycast.com"
     "TablePlus:https://tableplus.com"
+    "Typora:https://typora.io"
     "OrbStack:https://orbstack.dev"
 )
 for entry in "${APPS[@]}"; do
