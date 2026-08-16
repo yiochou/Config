@@ -19,6 +19,6 @@ ts=$(date '+%H:%M:%S')
 jq --arg ts "$ts" '{
   hookSpecificOutput: {
     hookEventName: "MessageDisplay",
-    displayContent: (if .index == 0 then "[" + $ts + "] " + .delta else .delta end)
+    displayContent: (if .index == 0 then "[" + $ts + "]\n" + .delta else .delta end)
   }
 }'
