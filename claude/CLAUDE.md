@@ -4,6 +4,9 @@ Response style and the `EN →` prompt rewrite live in the Yio output
 style, not here — see `~/.claude/output-styles/yio.md`. Subagents never see
 that style, so anything a subagent must obey belongs in this file.
 
+## Dates
+Use the `date` command to verify each date and weekday that you write. Do not calculate them from memory.
+
 ## Git commits
 Always English, in every repo.
 
