@@ -4,6 +4,9 @@ Response style and the `EN →` prompt rewrite live in the Yio output
 style, not here — see `~/.claude/output-styles/yio.md`. Subagents never see
 that style, so anything a subagent must obey belongs in this file.
 
+## Code
+YAGNI. Every exported name has a caller outside its own file and outside its own test. A test is not a caller. When the last caller goes, the code goes with it. Git keeps it for the day something needs it.
+
 ## Dates
 Use the `date` command to verify each date and weekday that you write. Do not calculate them from memory.
 
