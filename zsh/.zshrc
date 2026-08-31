@@ -21,6 +21,11 @@ alias localip="ipconfig getifaddr en0"
 
 alias kissa="uv run --directory ~/projects/kissa kissa"
 
+alias caf="caffeinate -d"
+alias caf1="caffeinate -dt 3600"
+alias caf2="caffeinate -dt 7200"
+alias caf3="caffeinate -dt 10800"
+
 # === editor ===
 export EDITOR="zed --wait"
 
