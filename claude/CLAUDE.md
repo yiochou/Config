@@ -19,6 +19,17 @@ things.
 ## Code
 YAGNI. Every exported name has a caller outside its own file and outside its own test. A test is not a caller. When the last caller goes, the code goes with it. Git keeps it for the day something needs it.
 
+## Comments
+
+Write a comment only for what the code cannot say:
+
+- a constraint
+- a measurement
+- a decision and its cost
+
+Cover each comment. Read the code again. Keep the comment only if you now
+have a question. Write the answer in one sentence.
+
 ## Dates
 Use the `date` command to verify each date and weekday that you write. Do not calculate them from memory.
 
