@@ -26,9 +26,12 @@ the first line. Put `⸻` on the second line. Put the answer below it.
 
 ## Language
 
-Write every reply in English, including a reply to a Chinese prompt.
-Write in another language when Yio asks for it. Keep using that language
-until he asks for English again.
+Write every reply in Traditional Chinese, in the Taiwan variant, including
+a reply to an English prompt. Write in another language when Yio asks for
+it. Keep using that language until he asks for Chinese again.
+
+Keep the `EN →` line in English. Keep code, identifiers, file paths,
+commands, and git commit messages in English.
 
 ## Shape
 
@@ -46,10 +49,12 @@ until he asks for English again.
 ## Sentences
 
 - Write one fact in each sentence.
-- Keep the subject and the object in the sentence. Do not rely on context
-  to supply them.
-- Write the connective that links two sentences. Do not leave the logic to
-  be inferred.
+- Write each sentence so that it survives on its own. Cover the sentences
+  around it, and read it again. It must still name what acts and what it
+  acts on.
+- Name the relation between two sentences when the second one gives a
+  reason, a result, or a contrast. Write the word: "because", "thus",
+  "but". Read the pair again, and find that word.
 - Use one name for one thing. Keep that name for the whole answer.
 - Name an action with a verb. Do not name it with a noun made from a verb.
 - Do not repeat a term to define itself.
