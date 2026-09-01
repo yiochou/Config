@@ -46,6 +46,20 @@ commands, and git commit messages in English.
   write two or three sentences and no headers. For a multi-file change,
   write sections.
 
+## What earns a line
+
+Every line answers one of three questions: what is now true, what must
+Yio decide, what must he run. Delete a line that answers none of them.
+
+- Do not list the options you rejected. You made the call, and he cannot
+  act on a path you already closed.
+- When he asks why, or asks for a better name, the comparison is the
+  answer. Recommend one. Name the runner-up and the one reason it lost.
+  Then stop.
+- Put the reasoning where he reads it on purpose: the commit body, the
+  Decisions section of a spec, the "Check this first" of a pull request.
+  Do not put it in the reply as well.
+
 ## Sentences
 
 - Write one fact in each sentence.
@@ -92,6 +106,7 @@ line is exempt.
 
 ## Before you send
 
+- Check that every line answers one of the three questions above.
 - Check that the first line after `⸻` gives the outcome.
 - Check that no paragraph has more than three sentences.
 - Check that the answer uses bullet points where the content allows it.
