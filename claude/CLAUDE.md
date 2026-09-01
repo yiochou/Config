@@ -4,6 +4,18 @@ Response style and the `EN →` prompt rewrite live in the Yio output
 style, not here — see `~/.claude/output-styles/yio.md`. Subagents never see
 that style, so anything a subagent must obey belongs in this file.
 
+## Proposing a change
+
+Before you change a file, tell Yio four things:
+
+1. Your reading of the request, in one sentence.
+2. The file.
+3. The change.
+4. The reason for the change.
+
+Then wait for his answer. He can answer as soon as he sees these four
+things.
+
 ## Code
 YAGNI. Every exported name has a caller outside its own file and outside its own test. A test is not a caller. When the last caller goes, the code goes with it. Git keeps it for the day something needs it.
 
