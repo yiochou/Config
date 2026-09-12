@@ -47,10 +47,6 @@ keybind = shift+enter=csi:13;2u
 unfocused-split-opacity = 0.9
 keybind = cmd+'=new_split:right
 keybind = cmd+shift+'=new_split:down
-keybind = opt+h=goto_split:left
-keybind = opt+j=goto_split:bottom
-keybind = opt+k=goto_split:top
-keybind = opt+l=goto_split:right
 keybind = cmd+shift+=equalize_splits
 
 # 新分頁/分割繼承當前工作目錄

@@ -21,6 +21,11 @@ ln -sf "$CONFIG_DIR/git/.gitconfig" ~/.gitconfig
 mkdir -p ~/.config/ghostty
 ln -sf "$CONFIG_DIR/ghostty/config" ~/.config/ghostty/config
 
+# === aerospace ===
+mkdir -p ~/.config/aerospace
+ln -sf "$CONFIG_DIR/aerospace/aerospace.toml" ~/.config/aerospace/aerospace.toml
+command -v aerospace &>/dev/null || brew install --cask nikitabobko/tap/aerospace
+
 # === typora ===
 # Typora only lists a theme after a restart; select it in Themes → Forest.
 TYPORA_THEMES="$HOME/Library/Application Support/abnerworks.Typora/themes"

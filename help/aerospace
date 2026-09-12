@@ -1,0 +1,35 @@
+# AeroSpace 快捷鍵
+
+Alt = Option 鍵。設定檔 ~/.config/aerospace/aerospace.toml
+
+── 焦點與搬移 ─────────────────────────────────────────────────
+
+  Alt+H/J/K/L          焦點移到左 / 下 / 上 / 右的視窗
+  Alt+Shift+H/J/K/L    把視窗往那個方向搬
+  Alt+-  /  Alt+=      視窗縮小 / 放大 50px
+
+── Workspace ──────────────────────────────────────────────────
+
+  Alt+1…9              切到 workspace N
+  Alt+Shift+1…9        把視窗丟到 workspace N
+  Alt+Tab              回上一個 workspace
+  Alt+Shift+Tab        整個 workspace 搬到下一個螢幕
+
+── Layout ─────────────────────────────────────────────────────
+
+  Alt+/                tiles 水平 ⇄ 垂直
+  Alt+,                accordion 水平 ⇄ 垂直（疊起來只看一個）
+
+── Service mode（Alt+Shift+; 進入，按完自動回 main）───────────
+
+  Esc                  重載設定
+  R                    攤平這個 workspace 的樹（排亂時用）
+  F                    視窗 floating ⇄ tiling
+  Backspace            關掉除了目前之外的所有視窗
+  Alt+Shift+H/J/K/L    跟那個方向的鄰居合成一個 container
+
+── 逃生口 ─────────────────────────────────────────────────────
+
+  aerospace enable off      停止管理，視窗回原位
+  aerospace enable on       恢復
+  aerospace list-windows --all   列出所有視窗

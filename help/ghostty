@@ -4,7 +4,7 @@
 
   Cmd+'            左右分割
   Cmd+Shift+'      上下分割
-  Opt+H/J/K/L      切換 pane（vim 方向）
+  Cmd+Opt+方向鍵   切換 pane（Ghostty 預設）
   Cmd+Shift+=       平均分配 pane 大小
 
 ── 基本操作 ───────────────────────────────────────────────────
