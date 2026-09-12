@@ -28,6 +28,16 @@ Alt = Option 鍵。設定檔 ~/.config/aerospace/aerospace.toml
   Backspace            關掉除了目前之外的所有視窗
   Alt+Shift+H/J/K/L    跟那個方向的鄰居合成一個 container
 
+── Workspace 分派（on-window-detected）───────────────────────
+
+  1                    Ghostty
+  2                    Zen、Dia
+  3                    Zed、Cursor
+  4                    Typora、flomo、備忘錄
+  5                    LINE、Telegram、Session、ChatGPT、Claude
+  9                    Spotify、Kindle
+  浮動                 Finder、系統設定、Raycast、辭典、便條紙
+
 ── 逃生口 ─────────────────────────────────────────────────────
 
   aerospace enable off      停止管理，視窗回原位
