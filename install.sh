@@ -73,6 +73,7 @@ CLI_TOOLS=(
     "zoxide:zoxide"
     "jq:jq"          # statusline.sh + the ExitPlanMode/Notification hooks
     "delta:git-delta" # .gitconfig core.pager
+    "gh:gh"
 )
 for entry in "${CLI_TOOLS[@]}"; do
     command -v "${entry%%:*}" &>/dev/null || brew install "${entry#*:}"

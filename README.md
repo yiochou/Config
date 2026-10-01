@@ -24,7 +24,7 @@ cd ~/projects/Config
 
 All configs are symlinked to their expected locations. Editing either side updates the same file.
 
-`install.sh` also installs the CLI tools the configs depend on (node, zoxide, jq,
+`install.sh` also installs the CLI tools the configs depend on (node, zoxide, jq, gh,
 git-delta) and prints a checklist of GUI apps and Zen extensions to install by
 hand.
 
