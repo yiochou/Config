@@ -55,6 +55,11 @@ if [[ -d ~/Projects/jam/skills/jam ]]; then
     mkdir -p ~/.claude/skills
     ln -sfn ~/Projects/jam/skills/jam ~/.claude/skills/jam
 fi
+# jot skill lives in the worklog repo, which install.sh does not clone
+if [[ -d ~/projects/worklog/skills/jot ]]; then
+    mkdir -p ~/.claude/skills
+    ln -sfn ~/projects/worklog/skills/jot ~/.claude/skills/jot
+fi
 # skills that live in this repo
 mkdir -p ~/.claude/skills
 ln -sfn "$CONFIG_DIR/claude/skills/config-sync" ~/.claude/skills/config-sync
