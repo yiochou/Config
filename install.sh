@@ -55,10 +55,12 @@ if [[ -d ~/Projects/jam/skills/jam ]]; then
     mkdir -p ~/.claude/skills
     ln -sfn ~/Projects/jam/skills/jam ~/.claude/skills/jam
 fi
-# jot skill lives in the worklog repo, which install.sh does not clone
-if [[ -d ~/projects/worklog/skills/jot ]]; then
+# jot, conf and slack skills live in the berry repo, which install.sh does not clone
+if [[ -d ~/projects/berry/skills ]]; then
     mkdir -p ~/.claude/skills
-    ln -sfn ~/projects/worklog/skills/jot ~/.claude/skills/jot
+    for s in jot conf slack; do
+        ln -sfn ~/projects/berry/skills/$s ~/.claude/skills/$s
+    done
 fi
 # skills that live in this repo
 mkdir -p ~/.claude/skills
